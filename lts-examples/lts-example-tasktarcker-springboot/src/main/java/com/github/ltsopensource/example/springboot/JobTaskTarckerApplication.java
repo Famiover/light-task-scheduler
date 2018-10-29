@@ -1,6 +1,6 @@
 package com.github.ltsopensource.example.springboot;
 
-import com.github.ltsopensource.spring.boot.annotation.EnableJobClient;
+import com.github.ltsopensource.spring.boot.annotation.EnableTaskTracker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,12 +9,12 @@ import org.springframework.context.annotation.ComponentScan;
  * @author Robert HG (254963746@qq.com) on 4/9/16.
  */
 @SpringBootApplication
-@EnableJobClient
+@EnableTaskTracker
 @ComponentScan("com.github.ltsopensource.example")
-public class Application {
+public class JobTaskTarckerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(JobTaskTarckerApplication.class, args);
     }
 
 }

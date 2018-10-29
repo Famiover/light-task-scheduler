@@ -11,10 +11,10 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableMonitor
 @ComponentScan("com.github.ltsopensource.example")
-public class Application {
+public class JobMonitorApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(JobMonitorApplication.class, args);
     }
 
 }

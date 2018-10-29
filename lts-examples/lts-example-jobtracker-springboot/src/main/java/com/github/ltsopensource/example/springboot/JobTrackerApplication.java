@@ -11,10 +11,10 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableJobTracker
 @ComponentScan("com.github.ltsopensource.example")
-public class Application {
+public class JobTrackerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(JobTrackerApplication.class, args);
     }
 
 }

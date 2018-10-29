@@ -25,6 +25,7 @@
         <module>lts-startup</module>
         <module>lts-monitor</module>
         <module>lts</module>
+        <module>lts-examples</module>
     </modules>
 
     <properties>
