@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableJobClient
 @ComponentScan("com.github.ltsopensource.example")
 public class JobClientApplication {
-    //
+    //90
 
     public static void main(String[] args) {
         SpringApplication.run(JobClientApplication.class, args);
