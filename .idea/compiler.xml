@@ -40,6 +40,7 @@
       <module name="lts-jobclient" target="1.6" />
       <module name="lts-jobtracker" target="1.6" />
       <module name="lts-monitor" target="1.6" />
+      <module name="lts-parent" target="1.6" />
       <module name="lts-spring" target="1.6" />
       <module name="lts-startup" target="1.6" />
       <module name="lts-tasktracker" target="1.6" />
