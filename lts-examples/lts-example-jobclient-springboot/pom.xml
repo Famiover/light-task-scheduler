@@ -23,6 +23,16 @@
         <dependency>
             <groupId>com.github.ltsopensource</groupId>
             <artifactId>lts</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mongodb.morphia</groupId>
+                    <artifactId>morphia</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.mongodb</groupId>
+                    <artifactId>mongo-java-driver</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 </project>
