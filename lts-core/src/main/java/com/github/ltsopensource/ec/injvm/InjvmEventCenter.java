@@ -1,9 +1,9 @@
 package com.github.ltsopensource.ec.injvm;
 
 import com.github.ltsopensource.core.commons.concurrent.ConcurrentHashSet;
+import com.github.ltsopensource.core.constant.Constants;
 import com.github.ltsopensource.core.factory.NamedThreadFactory;
 import com.github.ltsopensource.core.json.JSON;
-import com.github.ltsopensource.core.constant.Constants;
 import com.github.ltsopensource.core.logger.Logger;
 import com.github.ltsopensource.core.logger.LoggerFactory;
 import com.github.ltsopensource.ec.EventCenter;
@@ -24,8 +24,7 @@ public class InjvmEventCenter implements EventCenter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EventCenter.class.getName());
 
-    private final ConcurrentHashMap<String, Set<EventSubscriber>> ecMap =
-            new ConcurrentHashMap<String, Set<EventSubscriber>>();
+    private final ConcurrentHashMap<String, Set<EventSubscriber>> ecMap = new ConcurrentHashMap<String, Set<EventSubscriber>>();
 
     private final ExecutorService executor = Executors.newFixedThreadPool(Constants.AVAILABLE_PROCESSOR * 2, new NamedThreadFactory("LTS-InjvmEventCenter-Executor", true));
 
@@ -74,7 +73,6 @@ public class InjvmEventCenter implements EventCenter {
             @Override
             public void run() {
                 String topic = eventInfo.getTopic();
-
                 Set<EventSubscriber> subscribers = ecMap.get(topic);
                 if (subscribers != null) {
                     for (EventSubscriber subscriber : subscribers) {
@@ -82,8 +80,7 @@ public class InjvmEventCenter implements EventCenter {
                             eventInfo.setTopic(topic);
                             subscriber.getObserver().onObserved(eventInfo);
                         } catch (Throwable t) {     // 防御性容错
-                            LOGGER.error(" eventInfo:{}, subscriber:{}",
-                                    JSON.toJSONString(eventInfo), JSON.toJSONString(subscriber), t);
+                            LOGGER.error(" eventInfo:{}, subscriber:{}",JSON.toJSONString(eventInfo), JSON.toJSONString(subscriber), t);
                         }
                     }
                 }

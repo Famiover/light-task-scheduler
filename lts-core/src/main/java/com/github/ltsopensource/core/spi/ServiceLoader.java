@@ -34,7 +34,7 @@ public class ServiceLoader {
         ServiceProvider serviceProvider = getServiceProvider(clazz);
         String dynamicServiceName = config.getParameter(serviceProvider.dynamicConfigKey);
         String identity = config.getIdentity();
-        if(StringUtils.isEmpty(identity)){
+        if (StringUtils.isEmpty(identity)) {
             throw new IllegalArgumentException("config.identity should not be null");
         }
         return load(clazz, dynamicServiceName, identity);
@@ -43,7 +43,7 @@ public class ServiceLoader {
     public static <T> T load(Class<T> clazz, Config config, String configKey) {
         String dynamicServiceName = config.getParameter(configKey);
         String identity = config.getIdentity();
-        if(StringUtils.isEmpty(identity)){
+        if (StringUtils.isEmpty(identity)) {
             throw new IllegalArgumentException("config.identity should not be null");
         }
         return load(clazz, dynamicServiceName, identity);
@@ -142,6 +142,7 @@ public class ServiceLoader {
         try {
             BufferedReader r = null;
             try {
+                // file:/C:/Users/famiover/Desktop/light-task-scheduler/lts-core/target/classes/META-INF/lts/internal/com.github.ltsopensource.ec.EventCenter
                 URL url = urlDefinition.uri.toURL();
                 r = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
                 while (true) {

@@ -30,8 +30,7 @@ public class SelfChangeListener implements NodeChangeListener {
         if (node.getIdentity().equals(config.getIdentity())) {
             // 是当前节点, 看看节点配置是否发生变化
             // 1. 看 threads 有没有改变 , 目前只有 TASK_TRACKER 对 threads起作用
-            if (node.getNodeType().equals(NodeType.TASK_TRACKER)
-                    && (node.getThreads() != config.getWorkThreads())) {
+            if (node.getNodeType().equals(NodeType.TASK_TRACKER) && (node.getThreads() != config.getWorkThreads())) {
                 config.setWorkThreads(node.getThreads());
                 appContext.getEventCenter().publishAsync(new EventInfo(EcTopic.WORK_THREAD_CHANGE));
             }
